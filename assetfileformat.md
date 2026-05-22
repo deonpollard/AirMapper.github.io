@@ -3,17 +3,17 @@ For bulk importing Data Assets metadata in AirMapper, your file must be in XLSX 
 
 ## Standard XLSX Formatting Rules
 - File must be an Excel XLSX file
-- File must contain a Workbook with name of **Assets**
-- In Asset Workbook the first row must include headers as per below
+- File must contain a Worksheet with name of **Assets**
+- Within Asset Worksheet the first row must include headers as per below
 
 ### Mandatory Column Headers
 
 | Header | Subsequent rows should contain |
 | -------- | -------- |
-| column_name  | exact names of data assets you want to map.   |
+| **column_name**  | names of data assets you want to map as they exist in your'e environment.   |
 
 ### Optional Column Headers
-The following columns will automatically be created by the import process and subsequently updated by any mapping you perform. By supplying these columns values will be pre-set and preserved.
+The following columns will automatically be created by the import process and subsequently updated by any mapping you perform. By supplying these columns, values can be pre-set.
 
 | Header | Subsequent rows should contain |
 | -------- | -------- |
@@ -22,6 +22,10 @@ The following columns will automatically be created by the import process and su
 | data_type  | The data_type of the data asset   |
 | mapstatus  | Either **not aligned** or **aligning** or **aligned**   |
 | Source  | The name of the platform/system or source containing the data asset   |
+| exactness | numeric value from 0 to a 100, designating the sureaty of the mapping  |
+| Package  | Name of the Target (map-to) Package   |
+| Domain  | Name of the Target (map-to) Domain or Entity   |
+| Attribute  | Name of the Target (map-to) Attribute   |
 
 ## Example 1
 | column_name | 
