@@ -96,7 +96,7 @@ The following columns will automatically be created by the import process and su
 | Tied Agent  | PartyTable | Guidewire |
 | Claim Reservation  | PartyTable | Main Claim System |
 
-## Add a new Standard for Data Models
+## Add a new Standard for DataModels
 
 ### Standard Formatting Rules
 - File must be an Excel XLSX file
