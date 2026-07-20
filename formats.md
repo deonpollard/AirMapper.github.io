@@ -4,6 +4,7 @@ For bulk importing information into AirMapper, your file must be in **XLSX** for
 1. Import a file containing a [list of terms and descriptions](#add-a-new-business-standard-for-glossaries) against which mappings can be done, effectively to create a new standard Glossary
 2. Import a file containing a [list of terms](#add-a-new-dataset-for-mapping-terms) to be mapped.
 3. Import a file containing a [list of data assets](#add-a-new-dataset-for-mapping-data-assets) to be mapped.
+4. Import a file containing a [data model](#add-a-new-standard-for-datamodels) to be mapped against which mappings can be done, effectively to create a new standard Data Model
 
 
 ## Add a new Business Standard for Glossaries
@@ -94,4 +95,53 @@ The following columns will automatically be created by the import process and su
 | Broker  | PartyTable | Guidewire |
 | Tied Agent  | PartyTable | Guidewire |
 | Claim Reservation  | PartyTable | Main Claim System |
+
+## Add a new Standard for Data Models
+
+### Standard Formatting Rules
+- File must be an Excel XLSX file
+- File must contain a Worksheet with name of **Model**
+- File must contain a Worksheet with name of **Package**
+- Within Model/Package Worksheet the first row must include headers as per below
+
+### Mandatory Column Headers for Model
+Purpose of the worksheet is to define the actual Model
+
+| Header | Subsequent rows should contain |
+| -------- | -------- |
+| **Package**  | names of packages.  Package can mean any supergroup   |
+| **EntityName**  | names of entities within a given package  Entities can mean any group that forms a part of said package  |
+| **AttributeName**  | names of attributes within a given entity   |
+
+#### Sample Model worksheet
+
+| Package      | EntityName                           | AttributeName        |
+| ------------ | ------------------------------------ | -------------------- |
+| Associatives | Agreement request - Agreement Rlship | Identifier           |
+| Associatives | Agreement request - Agreement Rlship | Nature id            |
+| Associatives | Agreement request - Agreement Rlship | Agreement request id |
+| Associatives | Agreement request - Agreement Rlship | Agreement id         |
+| Associatives | Agreement request - Agreement Rlship | Population info id   |
+| Associatives | Agreement request - Agreement Rlship | Effective from date  |
+
+### Mandatory Column Headers for Package
+Purpose of the worksheet is to define the packages(supergroups) and assign optional icon and color to each
+
+| Header | Subsequent rows should contain |
+| -------- | -------- |
+| **name**  | names of package.  Can use any arbitray name that make sense   |
+| **icon**  | assign appropriate icon from (material)[https://pictogrammers.github.io/@mdi/font/2.0.46/] format will be mdi-xxxxx  |
+| **color**  | assign color from pallette ()[https://v2.vuetifyjs.com/en/styles/colors/#material-colors] format will be red lighten-1  |
+
+#### Sample Package worksheet
+
+| name                           | icon               | color            |
+| ------------------------------ | ------------------ | ---------------- |
+| Associatives                   | mdi-border-none    | blue darken-1    |
+| Account and fund               | mdi-cash           | red lighten-1    |
+| Activity                       | mdi-run            | red darken-2     |
+| Actuarial statistics and index | mdi-elevator       | pink lighten-1   |
+| Agreement                      | mdi-playlist-check | purple lighten-1 |
+
+
 
